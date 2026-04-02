@@ -1,0 +1,15 @@
+{
+  "name": "pw-bdd-saucedemo",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "bdd:generate": "npx bddgen",
+    "test": "npx playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.42.0",
+    "playwright-bdd": "latest",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
