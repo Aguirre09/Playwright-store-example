@@ -3,7 +3,9 @@ import { defineBddConfig } from 'playwright-bdd';
 
 const testDir = defineBddConfig({
   paths: ['features/*.feature'],
-  importTestFrom: 'steps/login.steps.ts', // Donde exportamos nuestro 'test' extendido
+  importTestFrom: 'steps/fixtures.ts', 
+  require: ['steps/*.ts'], // <--- ¡ESTA LÍNEA FALTA! Le dice dónde buscar los .ts
+  disableWarnings: { importTestFrom: true } 
 });
 
 export default defineConfig({

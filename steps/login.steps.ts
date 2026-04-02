@@ -1,12 +1,9 @@
-// IMPORTANTE: Importamos 'test' desde 'playwright-bdd'
 import { createBdd } from 'playwright-bdd';
-import { test as base } from 'playwright-bdd'; 
+import { test } from './fixtures.js'; // Importamos el centralizado
 import { expect } from '@playwright/test';
 
-// 1. Extendemos el test (Esto es lo que la librería busca)
-export const test = base.extend({});
 
-// 2. Inicializamos Given, When, Then usando ese test extendido
+
 const { Given, When, Then } = createBdd(test);
 
 Given('El usuario abre la pagina', async ({ page }) => {
