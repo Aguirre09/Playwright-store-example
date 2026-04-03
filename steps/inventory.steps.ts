@@ -2,7 +2,7 @@ import { createBdd } from 'playwright-bdd';
 import { test } from './fixtures.js';
 import { expect } from '@playwright/test';
 
-const { Given, When, Then } = createBdd(test);
+const {  When, Then } = createBdd(test);
 
 When('Agrega todos los productos disponibles al carrito', async ({ page }) => {
   // 1. Usamos una clase que NO cambie después del clic

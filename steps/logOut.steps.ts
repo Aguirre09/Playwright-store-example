@@ -2,7 +2,7 @@ import { createBdd } from 'playwright-bdd';
 import { test } from './fixtures.js'; // Importamos el centralizado
 import { expect } from '@playwright/test';
 
-const { Given, When, Then } = createBdd(test);
+const {  Then } = createBdd(test);
 
 // ... el resto de tus pasos Given, When, Then abajo
 

@@ -5,7 +5,7 @@
   "scripts": {
     "bdd:generate": "npx bddgen",
     "test": "playwright test",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@playwright/test": "^1.42.0",
