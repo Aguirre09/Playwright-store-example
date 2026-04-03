@@ -1,12 +1,23 @@
+name: Playwright BDD Tests
+
+# --- AQUÍ ESTABA EL ERROR: Los eventos deben estar definidos ---
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+# -----------------------------------------------------------
+
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    # --- ESTRATEGIA DE MATRIZ ---
+    
     strategy:
+      fail-fast: false
       matrix:
+        # Asegúrate de que estos tags existan en tus archivos .feature
         tag: ["@login", "@inventory", "@logout"]
-    # ----------------------------
 
     steps:
     - uses: actions/checkout@v4
@@ -26,13 +37,14 @@ jobs:
       run: npm run bdd:generate
 
     - name: Run Playwright tests by tag
-      # Usamos -g (grep) para filtrar por el nombre del archivo generado
-      run: npx playwright test --grep ${{ matrix.tag }}
+      # Importante: Usar comillas dobles para el grep
+      run: npx playwright test --grep "${{ matrix.tag }}"
 
-    - uses: actions/upload-artifact@v4
+    - name: Upload Report
+      uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        # Le ponemos un nombre único al reporte de cada archivo
-        name: report-${{ matrix.feature_file }}
+        # Usamos el tag para que cada reporte sea diferente
+        name: playwright-report-${{ matrix.tag }}
         path: playwright-report/
         retention-days: 30
