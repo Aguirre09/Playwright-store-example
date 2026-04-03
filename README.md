@@ -4,3 +4,5 @@ Limpiar: rm -rf .features-gen
 Generar: npm run bdd:generate
 
 Ejecutar: npm test
+
+npx playwright test -g "visual"
