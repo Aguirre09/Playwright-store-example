@@ -1,3 +1,4 @@
+@Inventory
 Feature: Inventory
 
 Scenario: Agregar todos los productos al carrito

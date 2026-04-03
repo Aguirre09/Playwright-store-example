@@ -1,3 +1,4 @@
+@logout
 Feature: LogOut SauceDemo
 
   Scenario: LogOut

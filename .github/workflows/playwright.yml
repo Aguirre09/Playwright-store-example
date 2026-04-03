@@ -4,9 +4,8 @@ jobs:
     runs-on: ubuntu-latest
     # --- ESTRATEGIA DE MATRIZ ---
     strategy:
-      fail-fast: false # Para que si uno falla, los otros sigan corriendo
       matrix:
-        feature_file: [login, logOut, inventory] # Aquí pones los nombres de tus archivos
+        tag: ["@login", "@inventory", "@logout"]
     # ----------------------------
 
     steps:

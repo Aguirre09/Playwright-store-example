@@ -1,3 +1,4 @@
+@login
 Feature: Login SauceDemo
 
   Scenario: Login exitoso
