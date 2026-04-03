@@ -25,9 +25,9 @@ jobs:
     - name: Generate BDD Test Files
       run: npm run bdd:generate
 
-    - name: Run Playwright test: ${{ matrix.feature_file }}
+    - name: Run Playwright tests by tag
       # Usamos -g (grep) para filtrar por el nombre del archivo generado
-      run: npx playwright test ${{ matrix.feature_file }}
+      run: npx playwright test --grep ${{ matrix.tag }}
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
