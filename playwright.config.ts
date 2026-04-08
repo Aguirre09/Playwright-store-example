@@ -10,8 +10,9 @@ const testDir = defineBddConfig({
 
 export default defineConfig({
   testDir,
-  reporter: 'html',
+  reporter: [['html'], ['list']],
   use: {
+
     screenshot: 'on',
     trace: 'on',
   },

@@ -6,3 +6,6 @@ Generar: npm run bdd:generate
 Ejecutar: npm test
 
 npx playwright test -g "visual"
+
+
+npx playwright test -g "@banners" --update-snapshots
